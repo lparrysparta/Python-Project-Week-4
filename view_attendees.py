@@ -15,7 +15,7 @@ def view_attendee_lists(events):
 # Checks whether anyone has registered for the event
         if len(event["attendees"]) == 0:
             print("No attendees registered.")
-        else:
+        else:$
             # Displays every registered attendee
             for attendee in event["attendees"]:
                 print("-", attendee)
