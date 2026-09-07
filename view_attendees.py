@@ -2,7 +2,7 @@ from data import events
 
 
 # Displays the registered attendees for each available event
-def view_attendee_lists(events):
+def view_attendee_lists():
     print("\n--- Attendee Lists ---")
  # Checks whether any events are available
     if len(events) == 0:
@@ -21,8 +21,6 @@ def view_attendee_lists(events):
                 print("-", attendee)
 
 
-# Calls the function using the events imported from data.py
-view_attendee_lists(events)
 
 
 

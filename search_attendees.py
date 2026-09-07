@@ -1,6 +1,6 @@
 from data import events
 
-def search_attendees(events):
+def search_attendees():
     attendees = []
     for event in events:
         for attendee in event["attendees"]:
@@ -29,4 +29,3 @@ def search_attendees(events):
         if found == False:
             print('No attendee found')
 
-search_attendees(events)
