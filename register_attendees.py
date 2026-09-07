@@ -43,15 +43,6 @@ def register_attendees():
     book_event()
 
 
-# def main(events):
-#     show_events()
-#     book_event()
-
-# if __name__ == "__main__":
-#     main()
-
-
-
 
 
 

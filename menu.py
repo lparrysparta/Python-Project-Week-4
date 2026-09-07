@@ -1,8 +1,6 @@
 from data import events
 
-running = True
-
-while running:
+def menu():
     print("\n===== Community Event Management System =====")
     print("1. View available events")
     print("2. Register an attendee")
@@ -30,6 +28,7 @@ while running:
         print("You chose: Display event statistics")
     elif choice == "6":
         print("Goodbye!")
-        running = False
     else:
         print("Invalid option -- please choose a number between 1 and 6.")
+    return choice
+
