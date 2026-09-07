@@ -13,7 +13,7 @@ def book_event():
     event_name = input("Please enter the name of the event you want to book: ")
     event = {}
     for e in events:
-        if e['name'] == event_name:
+        if e['name'].lower() == event_name.lower():
             event = e
     if not event_full(event['attendees'], event['capacity']):
         name = get_attendee_name()
@@ -24,6 +24,9 @@ def book_event():
             print("You are already registered. You cannot register for the same event twice.")
     else:
         print("This event is at max capacity. Please try again later, or book another event.")
+    if not event:
+        print("Event not found.")
+        return
 
 def get_attendee_name():
     first_name = input("Please provide your first name: ")
@@ -41,15 +44,6 @@ def already_registered(attendee_name, attendees):
 def register_attendees():
     show_events()
     book_event()
-
-
-# def main(events):
-#     show_events()
-#     book_event()
-
-# if __name__ == "__main__":
-#     main()
-
 
 
 
