@@ -1,23 +1,47 @@
-from menu import events
+# events = [
+#     {
+#         "name": "Painting Workshop",
+#         "date": "2026-09-12",
+#         "event_type": "Workshop",
+#         "capacity": 10,
+#         "attendees": ["Quad Azizi", "Bahaand Wardak"]
+#     },
+#     {
+#         "name": "7-a-side Football",
+#         "date": "2026-09-20",
+#         "event_type": "Sports",
+#         "capacity": 14,
+#         "attendees": ["Quresh Alshammari"]
+#     },
+#     {
+#         "name": "Charity Bake Sale",
+#         "date": "2026-10-01",
+#         "event_type": "Fundraiser",
+#         "capacity": 30,
+#         "attendees": ["Luke Parry"]
+#     }
+# ]
 
+# shows all events and their parameters in a table
 def show_events(events):
-    print(f"{'ID':<4} | {'Name':<30} | {'Date':<10} | {'Location':<20} |{'Spaces Left':<5}")
-    print("-" * 62)
+    print(f"{'Name':<35} | {'Date':<10} | {'Event Type':<25} | {'Spaces Left':<5}")
+    print("-" * 74)
     for event in events:
         spaces_left = event['capacity'] - len(event['attendees'])
-        print(f"{event['id']:<4} | {event['name']:<30} | {event['date']:<10} | {event['location']:<20} | {spaces_left:<5}")
+        print(f"{event['name']:<30} | {event['date']:<10} | {event['event_type']:<20} | {spaces_left:<5}")
 
-def book_event():
+# allows the user to book an event using their first and last name
+def book_event(events):
     event_name = input("Please enter the name of the event you want to book: ")
     event = {}
     for e in events:
         if e['name'] == event_name:
             event = e
     if not event_full(event['attendees'], event['capacity']):
-        name = get_attendee_name
+        name = get_attendee_name()
         if not already_registered(name, event['attendees']):
-            # TO DO: edit this with full attendee record if necessary, may just use name though
             event['attendees'].append(name)
+            print("You have successfully registered to the " + event['name'] + ".")
         else:
             print("You are already registered. You cannot register for the same event twice.")
     else:
@@ -26,7 +50,7 @@ def book_event():
 def get_attendee_name():
     first_name = input("Please provide your first name: ")
     last_name = input("Please provide your last name: ")
-    return first_name, last_name
+    return str(first_name + last_name)
 
 def event_full(attendees, event_capacity):
     return len(attendees) >= event_capacity
@@ -36,14 +60,17 @@ def already_registered(attendee_name, attendees):
 
 # def add_in_bulk(attendees_to_add, attendees):
 
-def main():
+def register_attendees(events):
     show_events(events)
-    book_event()
+    book_event(events)
 
 
+# def main(events):
+#     show_events(events)
+#     book_event(events)
 
-
-
+# if __name__ == "__main__":
+#     main(events)
 
 
 
