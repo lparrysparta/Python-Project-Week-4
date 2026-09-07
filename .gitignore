@@ -216,3 +216,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+#PyCharm
+.idea/
+.idea/inspectionProfiles/profiles_settings.xml
+
