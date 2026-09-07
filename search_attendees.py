@@ -1,20 +1,32 @@
-attendees = ['John Smith', 'Lisa Turner', 'Jane Doe', 'John Doe', 'John Quincy Adams', 'Tony Adams']
+from data import events
 
-while True:
-    attendee_searched = input('Search for an attendee by name: ').lower()
-    if attendee_searched.strip() == '':
-        print('Please enter an attendee name.')
-        continue
-    searched_names = attendee_searched.split()
+def search_attendees(events):
+    attendees = []
+    for event in events:
+        for attendee in event["attendees"]:
+            attendees.append(attendee)
 
-    for attendee in attendees:
-        split_attendee = attendee.lower().split()
-        matches = 0
+    while True:
+        attendee_searched = input('Search for an attendee by name (Enter N to exit): ').lower()
+        if attendee_searched.strip() == 'n':
+            return
+        if attendee_searched.strip() == '':
+            print('Please enter an attendee name.')
+            continue
+        searched_names = attendee_searched.split()
+        found = False
 
-        for searched_name in searched_names:
-            if searched_name in split_attendee:
-                matches += 1
+        for attendee in attendees:
+            split_attendee = attendee.lower().split()
+            matches = 0
 
-        if len(searched_names) == matches:
-            print(attendee)
+            for searched_name in searched_names:
+                if searched_name in split_attendee:
+                    matches += 1
+            if len(searched_names) == matches:
+                print(attendee)
+                found = True
+        if found == False:
+            print('No attendee found')
 
+search_attendees(events)
