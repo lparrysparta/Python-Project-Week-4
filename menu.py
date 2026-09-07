@@ -21,7 +21,7 @@ while running:
             print(f"   Date: {event['date']}")
             print(f"   Capacity: {len(event['attendees'])}/{event['capacity']} ({spaces_left} spaces left)")
     elif choice == "2":
-        print("You chose: Register an attendee")
+        register_attendees(events)
     elif choice == "3":
         print("You chose: View attendee list")
     elif choice == "4":
