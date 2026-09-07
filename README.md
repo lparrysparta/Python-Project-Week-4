@@ -1,6 +1,26 @@
-# Menu Code
-
-
+events = [
+    {
+        "name": "Painting Workshop",
+        "date": "2026-09-12",
+        "event_type": "Workshop",
+        "capacity": 10,
+        "attendees": ["Quad Azizi", "Bahaand Wardak"]
+    },
+    {
+        "name": "7-a-side Football",
+        "date": "2026-09-20",
+        "event_type": "Sports",
+        "capacity": 14,
+        "attendees": ["Quresh Alshammari"]
+    },
+    {
+        "name": "Charity Bake Sale",
+        "date": "2026-10-01",
+        "event_type": "Fundraiser",
+        "capacity": 30,
+        "attendees": ["Luke Parry"]
+    }
+]
 
 running = True
 
@@ -17,7 +37,12 @@ while running:
     choice = input("Choose an option (1-7): ")
 
     if choice == "1":
-        print("You chose: View available events")
+        print("\n--- Available Events ---")
+        for event in events:
+            spaces_left = event["capacity"] - len(event["attendees"])
+            print(f"{event['name']} ({event['event_type']})")
+            print(f"   Date: {event['date']}")
+            print(f"   Capacity: {len(event['attendees'])}/{event['capacity']} ({spaces_left} spaces left)")
     elif choice == "2":
         print("You chose: Register an attendee")
     elif choice == "3":
