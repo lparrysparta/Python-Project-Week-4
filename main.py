@@ -1,0 +1,2 @@
+from data import events
+from register_attendees import register_attendees
