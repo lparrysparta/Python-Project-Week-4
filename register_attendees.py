@@ -1,29 +1,7 @@
-# events = [
-#     {
-#         "name": "Painting Workshop",
-#         "date": "2026-09-12",
-#         "event_type": "Workshop",
-#         "capacity": 10,
-#         "attendees": ["Quad Azizi", "Bahaand Wardak"]
-#     },
-#     {
-#         "name": "7-a-side Football",
-#         "date": "2026-09-20",
-#         "event_type": "Sports",
-#         "capacity": 14,
-#         "attendees": ["Quresh Alshammari"]
-#     },
-#     {
-#         "name": "Charity Bake Sale",
-#         "date": "2026-10-01",
-#         "event_type": "Fundraiser",
-#         "capacity": 30,
-#         "attendees": ["Luke Parry"]
-#     }
-# ]
+from data import events
 
 # shows all events and their parameters in a table
-def show_events(events):
+def show_events():
     print(f"{'Name':<35} | {'Date':<10} | {'Event Type':<25} | {'Spaces Left':<5}")
     print("-" * 74)
     for event in events:
@@ -31,7 +9,7 @@ def show_events(events):
         print(f"{event['name']:<30} | {event['date']:<10} | {event['event_type']:<20} | {spaces_left:<5}")
 
 # allows the user to book an event using their first and last name
-def book_event(events):
+def book_event():
     event_name = input("Please enter the name of the event you want to book: ")
     event = {}
     for e in events:
@@ -60,17 +38,17 @@ def already_registered(attendee_name, attendees):
 
 # def add_in_bulk(attendees_to_add, attendees):
 
-def register_attendees(events):
-    show_events(events)
-    book_event(events)
+def register_attendees():
+    show_events()
+    book_event()
 
 
 # def main(events):
-#     show_events(events)
-#     book_event(events)
+#     show_events()
+#     book_event()
 
 # if __name__ == "__main__":
-#     main(events)
+#     main()
 
 
 
