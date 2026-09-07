@@ -1,28 +1,4 @@
-from register_attendees import register_attendees
-
-events = [
-    {
-        "name": "Painting Workshop",
-        "date": "2026-09-12",
-        "event_type": "Workshop",
-        "capacity": 10,
-        "attendees": ["Quad Azizi", "Bahaand Wardak"]
-    },
-    {
-        "name": "7-a-side Football",
-        "date": "2026-09-20",
-        "event_type": "Sports",
-        "capacity": 14,
-        "attendees": ["Quresh Alshammari"]
-    },
-    {
-        "name": "Charity Bake Sale",
-        "date": "2026-10-01",
-        "event_type": "Fundraiser",
-        "capacity": 30,
-        "attendees": ["Luke Parry"]
-    }
-]
+from data import events
 
 running = True
 
@@ -33,10 +9,9 @@ while running:
     print("3. View attendee list")
     print("4. Search for an attendee")
     print("5. Display event statistics")
-    print("6. Add a new event (bonus)")
-    print("7. Exit")
+    print("6. Exit")
 
-    choice = input("Choose an option (1-7): ")
+    choice = input("Choose an option (1-6): ")
 
     if choice == "1":
         print("\n--- Available Events ---")
@@ -54,9 +29,7 @@ while running:
     elif choice == "5":
         print("You chose: Display event statistics")
     elif choice == "6":
-        print("You chose: Add a new event")
-    elif choice == "7":
         print("Goodbye!")
         running = False
     else:
-        print("Invalid option -- please choose a number between 1 and 7.")
+        print("Invalid option -- please choose a number between 1 and 6.")
